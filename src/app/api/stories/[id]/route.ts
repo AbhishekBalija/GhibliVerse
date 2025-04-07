@@ -4,9 +4,9 @@ import clientPromise from '@/lib/db';
 
 export async function DELETE(
   request: Request,
-  context: Promise<{ params: { id: string } }>
+  { params }: { params: Promise<{ id: string }> }
 ) {
-  const { params: { id } } = await context;
+  const { id } = await params;
   
   try {
     if (!ObjectId.isValid(id)) {
