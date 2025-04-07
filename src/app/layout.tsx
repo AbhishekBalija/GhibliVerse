@@ -22,6 +22,9 @@ export const metadata: Metadata = {
     images: [
       {
         url: '/ProjectImage.png',
+        width: 1200,
+        height: 630,
+        alt: 'Ghibli Verse Story Generator',
       },
     ],
   },
