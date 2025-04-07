@@ -4,10 +4,11 @@ import clientPromise from '@/lib/db';
 
 export async function DELETE(
   request: Request,
-  { params }: { params: Promise<{ id: string }> }
+  context: { params: { id: string } }
 ) {
-  const { id } = await params;
-  
+  // Force the params to be awaited regardless of whether they are a plain object or a promise.
+  const { id } = await Promise.resolve(context.params);
+
   try {
     if (!ObjectId.isValid(id)) {
       return NextResponse.json(
