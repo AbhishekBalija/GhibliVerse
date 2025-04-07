@@ -18,6 +18,13 @@ const ptSans = PT_Sans({
 export const metadata: Metadata = {
   title: "Ghibli Verse Story Generator",
   description: "Ghibli Verse Story Generator brings the enchanting world of Studio Ghibli to life through AI-powered storytelling. Immerse yourself in magical narratives, captivating visuals, and dynamic backgrounds that transform every tale into a mesmerizing adventure. Explore a universe where fantasy meets technology and every story unfolds with wonder.",
+  openGraph: {
+    images: [
+      {
+        url: '/ProjectImage.png',
+      },
+    ],
+  },
 };
 
 export default function RootLayout({

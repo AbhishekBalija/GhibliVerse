@@ -5,6 +5,10 @@ A Next.js web application that generates immersive, customizable stories with dy
 This application combines the power of AI-generated storytelling with a polished, responsive user interface to create an engaging story generation experience. Users can customize their stories by theme, length, and style, save their favorite tales, and enjoy them with beautiful dynamic backgrounds that match the story's setting. The application features smooth animations, typewriter effects, and a carefully crafted UI that makes story generation both magical and intuitive.
 
 ## Repository Structure
+
+![Project Image](/public/ProjectImage.png)
+
+## Repository Structure
 ```
 .
 ├── src/                          # Source code directory
