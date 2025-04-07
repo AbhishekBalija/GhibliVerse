@@ -2,12 +2,12 @@ import { NextResponse } from 'next/server';
 import { ObjectId } from 'mongodb';
 import clientPromise from '@/lib/db';
 
-export async function DELETE(_request: Request, context: { params: unknown }) {
-  // Await the params (whether they’re provided synchronously or as a promise)
-  const resolvedParams = await Promise.resolve(context.params) as { id: string };
-  const id = resolvedParams.id;
-  
+export async function DELETE(
+  request: Request,
+  context: { params: { id: string } }
+) {
   try {
+    const id = context.params.id;
     if (!ObjectId.isValid(id)) {
       return NextResponse.json(
         { success: false, error: 'Invalid story ID' },
