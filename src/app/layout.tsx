@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: [
       {
-        url: '/ProjectImage.png',
+        url: 'https://drive.google.com/file/d/1Cv15p_xZ5M_tPb4imGJTv_88CPkCgvGd/view?usp=sharing',
         width: 1200,
         height: 630,
         alt: 'Ghibli Verse Story Generator',
