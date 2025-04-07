@@ -1,14 +1,12 @@
-import { NextResponse } from 'next/server';
+import { NextResponse, NextRequest } from 'next/server';
 import { ObjectId } from 'mongodb';
 import clientPromise from '@/lib/db';
 
-export async function DELETE(
-  request: Request,
-  { params }: { params: { id: string } }
-) {
+export async function DELETE(request: NextRequest) {
   try {
-    const { id } = params;
-    if (!ObjectId.isValid(id)) {
+    // Extract the ID from the URL path
+    const id = request.nextUrl.pathname.split('/').pop();
+    if (!id || !ObjectId.isValid(id)) {
       return NextResponse.json(
         { success: false, error: 'Invalid story ID' },
         { status: 400 }
