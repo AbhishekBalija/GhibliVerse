@@ -4,10 +4,10 @@ import clientPromise from '@/lib/db';
 
 export async function DELETE(
   request: Request,
-  { params }: { params: { id: string } }
+  context: { params: { id: string } }
 ) {
   try {
-    const id = params.id;
+    const id = context.params.id;
     if (!ObjectId.isValid(id)) {
       return NextResponse.json(
         { success: false, error: 'Invalid story ID' },
